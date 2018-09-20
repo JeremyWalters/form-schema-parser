@@ -1,0 +1,15 @@
+{
+  "verbose": true,
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testRegex": "(tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "testPathIgnorePatterns": [
+    "/lib/",
+    "/node_modules/",
+    "/tests/helpers/",
+    "/tests/shims.json.d.ts"
+  ],
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "collectCoverage": false
+}
