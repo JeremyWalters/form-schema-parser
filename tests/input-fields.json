@@ -1,0 +1,17 @@
+{
+  "name": "input-test",
+  "fields": [
+    {
+      "name": "testInput1",
+      "label": "First Test Input",
+      "type": "input",
+      "required": true
+    },
+    {
+      "name": "testInput2",
+      "friendlyName": "Second Test Input",
+      "type": "input",
+      "required": false
+    }
+  ]
+}

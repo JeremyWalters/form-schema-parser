@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for formContainer.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> formContainer.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.24% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export interface IComponentData {
+  name: string;
+  friendlyName: string;
+  type: string;
+  props: unknown;
+  lookupsApi: string;
+  items: string[];
+  defaultVal: any;
+}
+&nbsp;
+export abstract class BaseComponent {
+  private data: IComponentData;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>data: IComponentData) {
+<span class="cstat-no" title="statement not covered" >    this.data = data;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get </span>type() {
+<span class="cstat-no" title="statement not covered" >    return this.data.type;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get </span>name() {
+<span class="cstat-no" title="statement not covered" >    return this.data.name;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get </span>friendlyName() {
+<span class="cstat-no" title="statement not covered" >    return this.data.friendlyName;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get </span>props() {
+<span class="cstat-no" title="statement not covered" >    return this.data.props;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get </span>defaultVal() {
+<span class="cstat-no" title="statement not covered" >    return this.data.defaultVal;</span>
+  }
+&nbsp;
+  public <span class="fstat-no" title="function not covered" >isTypeOf</span>(type: string) {
+<span class="cstat-no" title="statement not covered" >    return this.type.toLowerCase() === type;</span>
+  }
+}
+&nbsp;
+export class DropDownComponent extends BaseComponent {
+  private _dropDownItems!: object[] | string[];
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >componentData: IComponentData,</span>
+    private <span class="cstat-no" title="statement not covered" >lookupService: (lookupsApi: string) =&gt; Promise&lt;any&gt;</span>
+  ) {
+<span class="cstat-no" title="statement not covered" >    super(componentData);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.setDropDownItems();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  async</span> setDropDownItems() {
+<span class="cstat-no" title="statement not covered" >    if (this.componentData.lookupsApi) {</span>
+      const response = <span class="cstat-no" title="statement not covered" >await this.lookupService(this.componentData.lookupsApi);</span>
+&nbsp;
+      const items = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >      for (let i = 0; i &lt; response.data.results.length; i++) {</span>
+        const cObject = <span class="cstat-no" title="statement not covered" >{</span>
+          text: response.data.results[i].name,
+          value: { id: response.data.results[i].id }
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        items.push(cObject);</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.dropDownItems = items;</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.dropDownItems = this.componentData.items;</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public set </span>dropDownItems(items: object[] | string[]) {
+<span class="cstat-no" title="statement not covered" >    this._dropDownItems = items;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get </span>dropDownItems() {
+<span class="cstat-no" title="statement not covered" >    return this._dropDownItems;</span>
+  }
+}
+&nbsp;
+export class CheckBoxComponent extends BaseComponent {}
+&nbsp;
+export class TextFieldComponent extends BaseComponent {}
+&nbsp;
+<span class="fstat-no" title="function not covered" >export class FormContainer {</span>
+  private <span class="cstat-no" title="statement not covered" >_components: BaseComponent[] = [];</span>
+&nbsp;
+  public <span class="fstat-no" title="function not covered" >add</span>(component: BaseComponent): void {
+<span class="cstat-no" title="statement not covered" >    this.components.push(component);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get </span>components() {
+<span class="cstat-no" title="statement not covered" >    return this._components;</span>
+  }
+}
+&nbsp;
+export interface IForm {
+  name: string;
+  fields: IComponentData[];
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Sep 20 2018 12:17:20 GMT+0200 (South Africa Standard Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
