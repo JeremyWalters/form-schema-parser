@@ -1,7 +1,7 @@
 import { BaseComponent, IComponentData } from './baseComponent';
 
 export class DropDownComponent extends BaseComponent {
-  private _dropDownItems!: object[] | string[];
+  private _dropDownItems: object[] | string[] = [];
 
   constructor(private componentData: IComponentData, private lookupService: (lookupsApi: string) => Promise<any>) {
     super(componentData);

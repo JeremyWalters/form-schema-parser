@@ -10,6 +10,15 @@ export class FormContainer {
   get components() {
     return this._components;
   }
+
+  /**
+   * This will build and return a default model
+   * We will probably need to so we can identify where data should be polulated in case the form is going
+   * to populated programaticly
+   */
+  public getDefaultModel() {
+    // TODO: Default model
+  }
 }
 
 export interface IForm {
