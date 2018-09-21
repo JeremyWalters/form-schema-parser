@@ -6,6 +6,7 @@ export interface IComponentData {
   lookupsApi: string;
   items: string[];
   defaultVal: any;
+  hidden: boolean;
 }
 
 export abstract class BaseComponent {
@@ -33,6 +34,10 @@ export abstract class BaseComponent {
 
   public get defaultVal() {
     return this.data.defaultVal;
+  }
+
+  public get hidden() {
+    return this.data.hidden;
   }
 
   public isTypeOf(type: string) {
