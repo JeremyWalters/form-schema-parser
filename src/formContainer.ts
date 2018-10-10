@@ -24,4 +24,5 @@ export class FormContainer {
 export interface IForm {
   name: string;
   fields: IComponentData[];
+  applyToAllFields: IComponentData;
 }

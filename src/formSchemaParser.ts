@@ -16,6 +16,7 @@ export class FormSchemaParser {
 
   public parseSchema() {
     this.schemaComponents = this.formSchema.fields;
+    this.parseApplyToAllFields();
   }
 
   public createFormContainer() {
@@ -39,6 +40,18 @@ export class FormSchemaParser {
     }
 
     this.parsedForm = formContainer;
+  }
+
+  private parseApplyToAllFields() {
+    if (!this.formSchema.applyToAllFields) {
+      return;
+    }
+
+    for (const field in this.schemaComponents) {
+      if (this.schemaComponents.hasOwnProperty(field)) {
+        this.schemaComponents[field] = { ...this.schemaComponents[field], ...this.formSchema.applyToAllFields };
+      }
+    }
   }
 
   get parsedForm() {

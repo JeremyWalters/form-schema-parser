@@ -1,12 +1,18 @@
+export interface IPossibleProps {
+  required?: boolean;
+  readonly?: boolean;
+}
+
 export interface IComponentData {
   name: string;
   friendlyName: string;
   type: string;
-  props: unknown;
+  props: IPossibleProps;
   lookupsApi: string;
   items: string[];
   defaultVal: any;
   hidden: boolean;
+  htmlClass?: string;
 }
 
 export abstract class BaseComponent {
@@ -38,6 +44,10 @@ export abstract class BaseComponent {
 
   public get hidden() {
     return this.data.hidden;
+  }
+
+  public get htmlClass(): string | undefined {
+    return this.data.htmlClass;
   }
 
   public isTypeOf(type: string) {
