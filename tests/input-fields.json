@@ -12,6 +12,11 @@
       "friendlyName": "Second Test Input",
       "type": "input",
       "required": false
+    },
+    {
+      "name": "testInput3",
+      "friendlyName": "Label Input",
+      "type": "label"
     }
   ]
 }

@@ -4,21 +4,19 @@ import * as TestData2 from './schema-properties.json';
 
 describe('Components Tests', () => {
   test('Test Input Component', () => {
-    const formParser = new FormSchemaParser(<any>TestData, () => {});
+    const formParser = new FormSchemaParser(TestData as any, () => {});
     formParser.parseSchema();
     formParser.createFormContainer();
 
     // Adjust after test data has been modified
-    expect(formParser.parsedForm.components.length).toBe(2);
+    expect(formParser.parsedForm.components.length).toBe(3);
 
     // Check form field lengths
-    expect(formParser.parsedForm.components.length).toBe((<any>TestData).fields.length);
+    expect(formParser.parsedForm.components.length).toBe((TestData as any).fields.length);
 
-    for (let i = 0; i < (<any>TestData).fields.length; i++) {
-      expect(formParser.parsedForm.components[i].isTypeOf('input')).toBe(true);
-      expect(formParser.parsedForm.components[i].friendlyName).toBe((<any>TestData).fields[i].friendlyName);
-      expect(formParser.parsedForm.components[i].name).toBe((<any>TestData).fields[i].name);
-    }
+    expect(formParser.parsedForm.components[0].isTypeOf('input')).toBe(true);
+    expect(formParser.parsedForm.components[0].friendlyName).toBe((TestData as any).fields[0].friendlyName);
+    expect(formParser.parsedForm.components[0].name).toBe((TestData as any).fields[0].name);
   });
 
   test('Test Attribute: "applyToAllFields"', () => {
@@ -40,5 +38,15 @@ describe('Components Tests', () => {
     expect(formParser.parsedForm.components[1].name).toBe('testInput2');
     expect(formParser.parsedForm.components[1].props.readonly).toBe(true);
     expect(formParser.parsedForm.components[1].htmlClass).toBe('xs12 md6');
+  });
+
+  test('Test Label Component', () => {
+    const formParser = new FormSchemaParser(TestData as any, () => {});
+    formParser.parseSchema();
+    formParser.createFormContainer();
+
+    expect(formParser.parsedForm.components[2].isTypeOf('label')).toBe(true);
+    expect(formParser.parsedForm.components[2].friendlyName).toBe((TestData as any).fields[2].friendlyName);
+    expect(formParser.parsedForm.components[2].name).toBe((TestData as any).fields[2].name);
   });
 });
