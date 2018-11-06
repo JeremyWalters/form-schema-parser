@@ -1,0 +1,25 @@
+{
+  "name": "input-test",
+  "fields": [
+    {
+      "name": "testInput1",
+      "label": "First Test Input",
+      "type": "input",
+      "format": "date",
+      "required": true
+    },
+    {
+      "name": "testInput2",
+      "friendlyName": "Second Test Input",
+      "type": "input",
+      "format": "currency",
+      "required": false
+    },
+    {
+      "name": "testInput3",
+      "friendlyName": "Label Input",
+      "format": "tel",
+      "type": "label"
+    }
+  ]
+}

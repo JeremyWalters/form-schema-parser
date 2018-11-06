@@ -13,6 +13,7 @@ export interface IComponentData {
   defaultVal: any;
   hidden: boolean;
   htmlClass?: string;
+  format?: 'date' | 'currency' | 'tel';
 }
 
 export abstract class BaseComponent {
@@ -48,6 +49,10 @@ export abstract class BaseComponent {
 
   public get htmlClass(): string | undefined {
     return this.data.htmlClass;
+  }
+
+  public get format(): string | undefined {
+    return this.data.format;
   }
 
   public isTypeOf(type: string) {
