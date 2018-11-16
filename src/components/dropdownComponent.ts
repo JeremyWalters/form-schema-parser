@@ -20,17 +20,7 @@ export class DropDownComponent extends BaseComponent {
         results = response.data;
       }
 
-      const items = [];
-      for (const result of results) {
-        const cObject = {
-          text: result.name,
-          value: { id: result.id },
-        };
-
-        items.push(cObject);
-      }
-
-      this.dropDownItems = items;
+      this.dropDownItems = results;
     } else {
       this.dropDownItems = this.componentData.items;
     }
