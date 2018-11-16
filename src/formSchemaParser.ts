@@ -46,6 +46,7 @@ export class FormSchemaParser {
     this.parsedForm = formContainer;
   }
 
+  // TODO: applyToAllFields should not override field properties
   private parseApplyToAllFields() {
     if (!this.formSchema.applyToAllFields) {
       return;

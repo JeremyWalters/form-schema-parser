@@ -13,8 +13,15 @@ export class DropDownComponent extends BaseComponent {
     if (this.componentData.lookupsApi) {
       const response = await this.lookupService(this.componentData.lookupsApi);
 
+      let results = [];
+      if (response.data && response.data.results) {
+        results = response.data.results;
+      } else if (response.data && !response.data.results) {
+        results = response.data;
+      }
+
       const items = [];
-      for (const result of response.data.results) {
+      for (const result of results) {
         const cObject = {
           text: result.name,
           value: { id: result.id },
