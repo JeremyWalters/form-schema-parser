@@ -1,6 +1,6 @@
 {
   "name": "form-schema-parser",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Form parser that expects a json file container json structured components and outputs it in readable objects",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
