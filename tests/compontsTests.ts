@@ -1,11 +1,16 @@
+import { DropDownComponent } from '../src/components/dropdownComponent';
+import { DropDownSearchComponent } from '../src/components/dropdownSearchComponent';
 import { FormSchemaParser } from '../src/formSchemaParser';
-import * as TestData from './input-fields.json';
-import * as TestData2 from './schema-properties.json';
-import * as TestDataFormat from './component-data-format.json';
+import * as TestDataFormat from './testData/component-data-format.json';
+import * as TestDataDropdown from './testData/dropdown-component.json';
+import * as TestData from './testData/input-fields.json';
+import * as TestData2 from './testData/schema-properties.json';
 
 describe('Components Tests', () => {
   test('Test Input Component', () => {
-    const formParser = new FormSchemaParser(TestData as any, () => {});
+    const formParser = new FormSchemaParser(TestData as any, () => {
+      /** Empty Block */
+    });
     formParser.parseSchema();
     formParser.createFormContainer();
 
@@ -21,7 +26,9 @@ describe('Components Tests', () => {
   });
 
   test('Test Attribute: "applyToAllFields"', () => {
-    const formParser = new FormSchemaParser(TestData2 as any, () => {});
+    const formParser = new FormSchemaParser(TestData2 as any, () => {
+      /** Empty Block */
+    });
     formParser.parseSchema();
     formParser.createFormContainer();
 
@@ -42,7 +49,9 @@ describe('Components Tests', () => {
   });
 
   test('Test Label Component', () => {
-    const formParser = new FormSchemaParser(TestData as any, () => {});
+    const formParser = new FormSchemaParser(TestData as any, () => {
+      /** Empty Block */
+    });
     formParser.parseSchema();
     formParser.createFormContainer();
 
@@ -52,12 +61,40 @@ describe('Components Tests', () => {
   });
 
   test('Test Format Data Property', () => {
-    const formParser = new FormSchemaParser(TestDataFormat as any, () => {});
+    const formParser = new FormSchemaParser(TestDataFormat as any, () => {
+      /** Empty Block */
+    });
     formParser.parseSchema();
     formParser.createFormContainer();
 
     expect(formParser.parsedForm.components[0].format).toBe('date');
     expect(formParser.parsedForm.components[1].format).toBe('currency');
     expect(formParser.parsedForm.components[2].format).toBe('tel');
+  });
+
+  test('Test Dropdown Component', () => {
+    const formParser = new FormSchemaParser(TestDataDropdown as any, () => {
+      /** Empty Block */
+    });
+    formParser.parseSchema();
+    formParser.createFormContainer();
+
+    expect(formParser.parsedForm.components[0].isTypeOf('dropdown')).toBe(true);
+    expect(formParser.parsedForm.components[0].friendlyName).toBe((TestDataDropdown as any).fields[0].friendlyName);
+    expect(formParser.parsedForm.components[0].name).toBe((TestDataDropdown as any).fields[0].name);
+    expect((formParser.parsedForm.components[0] as DropDownComponent).dropDownItems.length).toBe(3);
+  });
+
+  test('Test Dropdown Search Component', () => {
+    const formParser = new FormSchemaParser(TestDataDropdown as any, () => () => {
+      /** Empty Block */
+    });
+    formParser.parseSchema();
+    formParser.createFormContainer();
+
+    expect(formParser.parsedForm.components[2].isTypeOf('dropdownsearch')).toBe(true);
+    expect(formParser.parsedForm.components[2].friendlyName).toBe((TestDataDropdown as any).fields[2].friendlyName);
+    expect(formParser.parsedForm.components[2].name).toBe((TestDataDropdown as any).fields[2].name);
+    expect((formParser.parsedForm.components[2] as DropDownSearchComponent).dropDownItems.length).toBe(3);
   });
 });

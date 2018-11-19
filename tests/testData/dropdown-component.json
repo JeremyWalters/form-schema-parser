@@ -1,0 +1,25 @@
+{
+  "name": "dropdown-test",
+  "fields": [
+    {
+      "name": "testDropwown1",
+      "friendlyName": "First Test Dropwown",
+      "type": "dropdown",
+      "items": ["item1", "item2", "item3"],
+      "required": true
+    },
+    {
+      "name": "testDropwown2",
+      "friendlyName": "Second Test Dropdown",
+      "type": "dropdown",
+      "items": ["item1", "item2", "item3"],
+      "required": false
+    },
+    {
+      "name": "testDropwown3",
+      "friendlyName": "Dropdown Search",
+      "type": "dropdownSearch",
+      "items": ["item1", "item2", "item3"]
+    }
+  ]
+}

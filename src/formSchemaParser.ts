@@ -1,6 +1,7 @@
 import { IComponentData } from './components/baseComponent';
 import { CheckBoxComponent } from './components/checkboxComponent';
 import { DropDownComponent } from './components/dropdownComponent';
+import { DropDownSearchComponent } from './components/dropdownSearchComponent';
 import { LabelComponent } from './components/labelComponent';
 import { TextFieldComponent } from './components/textfieldComponent';
 import { FormContainer, IForm } from './formContainer';
@@ -33,6 +34,9 @@ export class FormSchemaParser {
           continue;
         case 'dropdown':
           formContainer.add(new DropDownComponent(field, this.lookupService));
+          continue;
+        case 'dropdownSearch':
+          formContainer.add(new DropDownSearchComponent(field, this.lookupService));
           continue;
         case 'label':
           formContainer.add(new LabelComponent(field));

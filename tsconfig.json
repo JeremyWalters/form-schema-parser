@@ -6,6 +6,6 @@
     "outDir": "./lib",
     "strict": true
   },
-  "include": ["src"],
+  "include": ["src", "tests/compontsTests.ts"],
   "exclude": ["node_modules"]
 }
