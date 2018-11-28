@@ -45,7 +45,7 @@ describe('Components Tests', () => {
     expect(formParser.parsedForm.components[1].friendlyName).toBe('Second Test Input');
     expect(formParser.parsedForm.components[1].name).toBe('testInput2');
     expect(formParser.parsedForm.components[1].props.readonly).toBe(true);
-    expect(formParser.parsedForm.components[1].htmlClass).toBe('xs12 md6');
+    expect(formParser.parsedForm.components[1].htmlClass).toBe('md12');
   });
 
   test('Test Label Component', () => {

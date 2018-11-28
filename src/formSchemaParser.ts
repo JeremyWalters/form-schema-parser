@@ -58,7 +58,11 @@ export class FormSchemaParser {
 
     for (const field in this.schemaComponents) {
       if (this.schemaComponents.hasOwnProperty(field)) {
-        this.schemaComponents[field] = { ...this.schemaComponents[field], ...this.formSchema.applyToAllFields };
+        for (const applyField in this.formSchema.applyToAllFields) {
+          if (!(this.schemaComponents[field] as any)[applyField]) {
+            (this.schemaComponents[field] as any)[applyField] = (this.formSchema.applyToAllFields as any)[applyField];
+          }
+        }
       }
     }
   }

@@ -12,7 +12,8 @@
     },
     {
       "name": "testInput2",
-      "friendlyName": "Second Test Input"
+      "friendlyName": "Second Test Input",
+      "htmlClass": "md12"
     }
   ]
 }
